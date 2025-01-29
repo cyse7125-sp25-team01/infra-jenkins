@@ -11,17 +11,14 @@ module "vpc" {
 }
 
 module "sg" {
-  source   = "./modules/sg"
-  sg_name  = var.sg_name
-  vpc_id   = module.vpc.vpc_id
-  app_port = var.app_port
-  vpc_cidr = var.vpc_cidr
+  source  = "./modules/sg"
+  sg_name = var.sg_name
+  vpc_id  = module.vpc.vpc_id
+  sg_description = var.sg_description
 }
 
 module "iam" {
-  source               = "./modules/iam"
-  iam_instance_profile = module.ec2_instance.iam_instance_profile
-  instance_id          = module.ec2_instance.instance_id
+  source = "./modules/iam"
 }
 
 module "ec2_instance" {
@@ -35,4 +32,6 @@ module "ec2_instance" {
   root_volume_size     = var.root_volume_size
   key_pair             = var.key_pair
   iam_instance_profile = module.iam.iam_instance_profile
+  admin_email          = var.admin_email
+  jenkins_domain       = var.jenkins_domain
 }

@@ -1,13 +1,12 @@
 variable "sg_name" {
   description = "Name of the security group for EC2 instances"
   type        = string
-  default     = "application-security-group"
 }
 
 variable "sg_description" {
   description = "Description of the security group"
   type        = string
-  default     = "Application Security Group"
+  default = "Security Group - Ports 22,80, 443"
 }
 
 variable "vpc_id" {
@@ -15,13 +14,4 @@ variable "vpc_id" {
   type        = string
 }
 
-variable "app_port" {
-  description = "Port on which the application runs"
-  type        = number
-}
-
-variable "vpc_cidr" {
-  description = "CIDR block for the VPC"
-  default     = "10.0.0.0/16"
-}
 
