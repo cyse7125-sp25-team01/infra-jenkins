@@ -43,12 +43,12 @@ variable "iam_instance_profile" {
   type        = string
 }
 
-variable "admin_email"{
-  description="Email of the Admin for SSL"
-  type=string
+variable "admin_email" {
+  description = "Email of the Admin for SSL"
+  type        = string
 }
 
-variable "jenkins_domain"{
+variable "jenkins_domain" {
   description = "Domain of the hosted Jenkins App"
-  type=string
+  type        = string
 }

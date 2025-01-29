@@ -18,7 +18,7 @@ resource "aws_instance" "app_instance" {
 
   lifecycle {
     create_before_destroy = true
-    
+
   }
 
   user_data = <<-EOF

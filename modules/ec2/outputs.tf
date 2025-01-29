@@ -10,5 +10,5 @@ output "instance_id" {
 
 output "iam_instance_profile" {
   description = "The IAM Instance Profile of the created EC2 instance"
-  value = aws_instance.app_instance.iam_instance_profile
+  value       = aws_instance.app_instance.iam_instance_profile
 }
