@@ -31,7 +31,7 @@ variable "sg_name" {
 variable "sg_description" {
   description = "Description of the security group"
   type        = string
-  default = "Security Group - Ports 22,80, 443"
+  default     = "Security Group - Ports 22,80, 443"
 }
 
 

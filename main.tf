@@ -11,9 +11,9 @@ module "vpc" {
 }
 
 module "sg" {
-  source  = "./modules/sg"
-  sg_name = var.sg_name
-  vpc_id  = module.vpc.vpc_id
+  source         = "./modules/sg"
+  sg_name        = var.sg_name
+  vpc_id         = module.vpc.vpc_id
   sg_description = var.sg_description
 }
 
