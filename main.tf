@@ -34,4 +34,5 @@ module "ec2_instance" {
   iam_instance_profile = module.iam.iam_instance_profile
   admin_email          = var.admin_email
   jenkins_domain       = var.jenkins_domain
+  use_staging_cert     = var.use_staging_cert
 }

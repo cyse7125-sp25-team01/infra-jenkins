@@ -48,6 +48,11 @@ variable "admin_email" {
   type        = string
 }
 
+variable "use_staging_cert" {
+  description = "Flag to use Let's Encrypt staging environment"
+  type        = bool
+}
+
 variable "jenkins_domain" {
   description = "Domain of the hosted Jenkins App"
   type        = string
