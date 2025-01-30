@@ -23,7 +23,11 @@ resource "aws_instance" "app_instance" {
 
   user_data = <<-EOF
     #!/bin/bash
-    sudo certbot --nginx \
+    STAGING_FLAG=""
+    if [ "${var.use_staging_cert}" = "true" ]; then
+      STAGING_FLAG="--staging"
+    fi
+    sudo certbot --nginx $STAGING_FLAG \
       -d ${var.jenkins_domain} \
       --non-interactive \
       --agree-tos \
